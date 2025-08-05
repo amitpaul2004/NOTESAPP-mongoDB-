@@ -55,4 +55,30 @@ const UpdateNotes = async (req, res) => {
 
     }
 }
-export {Create,UpdateNotes}
+
+const Delete=async (req, res) => {
+    try{
+        const userId = req.userId
+        console.log(userId)
+        const NotesId = req.params.id
+
+        const FindNotes = await NotesModel.findById({_id:NotesId})
+        if (!FindNotes) {
+            return res.status(404).json({ success: false, message: "Notes Not found" })
+        
+        }
+        const NotesuserId = FindNotes.userId
+
+        if (userId.toString() !== NotesuserId) {
+            return res.status(404).json({ success: false, message: "unathorized user" })
+        }
+        const DeleteNotes = await NotesModel.findByIdAndDelete({NotesId})
+        res.status(200).json({ success: true, message: "Notes deleted successfully", DeleteNotes })
+
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({ success: false, message: "Internal server error" })
+    }
+}
+
+export {Create,UpdateNotes,Delete}
