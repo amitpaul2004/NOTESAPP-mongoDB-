@@ -81,4 +81,23 @@ const Delete=async (req, res) => {
     }
 }
 
-export {Create,UpdateNotes,Delete}
+const GetNotes = async (req, res) => {
+    try{
+        const userId = req.userId
+
+        const Notes = await NotesModel.find({ userId })
+        if (!Notes) {
+              return res.status(404).json({ success: false, message: "No data found" })
+
+        }
+        res.status(200).json({ success: true,Notes })
+
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({ success: false, message: "Internal server error" })
+
+    
+    }
+}
+
+export {Create,UpdateNotes,Delete,GetNotes}
