@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar';
+import Notes from '../components/Notes';
 
 export default function Home() {
     return (
@@ -11,6 +12,16 @@ export default function Home() {
                 </div>
             <div className='col-lg-10 col-md-10'>
                 <Navbar/>
+                <div className='mt-3 mx-5'>
+                <h1 className='fs-3 fw-bold'>NOTES</h1>
+                </div>
+
+                <div className='row mt-4 mx-5'>
+                    <div className='col-md-4 mb-5 col-lg-4'>
+                        <Notes></Notes>
+                    </div>
+                    
+                </div>
                 </div>
         </div>
        </div>
