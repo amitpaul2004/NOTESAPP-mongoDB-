@@ -2,9 +2,12 @@ import React from 'react';
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar';
 import Notes from '../components/Notes';
+import NoteModal from '../components/NoteModal';
 
 export default function Home() {
     return (
+        <>
+        <NoteModal title={'Create Notes'}/>
        <div className='container-fluid'>
         <div className='row'>
             <div className='col-lg-2 col-md-2 min-vh-100 shadow'>
@@ -25,5 +28,6 @@ export default function Home() {
                 </div>
         </div>
        </div>
+       </>
     )
 }
