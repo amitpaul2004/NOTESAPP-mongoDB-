@@ -2,3 +2,13 @@
   padding: 0;
   margin: 0;
 }
+
+.searchinput{
+
+  border:none;
+  box-shadow:5px 5px 8px gray;
+  width: 270px;
+  border-radius: 18px;
+  padding-left: 20px;
+  height: 40px;
+}
