@@ -12,7 +12,7 @@ export default function NoteModal({title}) {
       <div className="modal-header">
         <h1 className="modal-title fs-5" id="exampleModalLabel">{title}</h1>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>i
+      </div>
       <div className="modal-body">
 <form class="form-floating">
   <input type="email" class="form-control" id="floatingInputValue" />
