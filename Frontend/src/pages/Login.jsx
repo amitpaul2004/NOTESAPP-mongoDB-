@@ -11,7 +11,7 @@ export default function Login() {
                         
                         <div className="form-group mb-3">
                           <label htmlFor='email' className='form-label'>Email</label>
-                            <input type="email" name='email' className="form-control" placeholder="Email" aria-describedby="basic-addon2"></input>
+                            <input type="email" name='email' className="form-control" placeholder="Email" aria-describedby="basic-addon2"/>
                         </div>
 
                         <div className='form-group mb-3'>
@@ -23,7 +23,7 @@ export default function Login() {
 
                         <button className='btn btn-success w-100 mb-3'>Login</button>
                         <div className='text-center'>
-                            <p>Don't have an account ! <Link to={'/register'}>register</Link></p>
+                            <p>Don't have an account ! <Link to={'/register'}>Register</Link></p>
                         </div>
                       </form>
             </div>

@@ -4,6 +4,8 @@ import AutRoutes from './routes/Auth.js'
 import DbCon from './utlis/db.js'
 import NotesRoutes from './routes/Notes.js'
 import cookieParser from 'cookie-parser'
+import cors from 'cors'
+
 dotenv.config()
 
 //mongo
@@ -18,6 +20,12 @@ const app = express();
 
 app.use(express.json())
 app.use(cookieParser())
+
+app.use(cors({
+       Credentials: true,
+       origin: 'http://localhost:5173'
+
+}));
 
 app.use('/auth',AutRoutes)
 app.use('/notes',NotesRoutes)
